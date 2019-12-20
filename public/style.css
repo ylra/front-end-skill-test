@@ -1,0 +1,23 @@
+.viewContainer{
+    border:1px solid grey;
+}
+
+.listContainer{
+    border:1px solid grey;
+}
+
+.recipe-list-title{
+    font-weight:bold !important;
+}
+
+.recipe-list-desc{
+
+}
+
+.float-right{
+    float:right !important;
+}
+
+h1{
+    display:inline;
+}

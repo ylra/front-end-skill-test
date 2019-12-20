@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JONAS GEMSON ACUNA</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css" rel="stylesheet"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js"></script>
+
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+
+            <div class="input-design">
+                <h3>Create Recipe</h3>
+                    <hr/>
+                    <form name="submit_recipe" id="submitForm" action="#">
+                        <div class="form-group">
+                            <label>Title</label>
+                            <input  type="text" class="form-control" name="title" placeholder="type here..">
+                        </div>
+                        <div class="form-group">
+                            <label>Servings</label>
+                            <input type="text" class="form-control" name="servings" placeholder="type here..">
+                        </div>
+                        <div class="form-group">
+                            <label>Prep Time</label>
+                            <input type="text" class="form-control" name="prepTime" placeholder="type here..">
+                        </div>
+                        <div class="form-group">
+                            <label>Cook Time</label>
+                            <input type="text" class="form-control" name="cookTime" placeholder="type here..">
+                        </div>
+                        <div class="form-group">
+                            <label>Description</label>
+                            <textarea class="form-control" name="description" rows="4" cols="50"></textarea>
+                        </div>
+
+                        <input type="button"  class="btn btn-primary"  name="submit" value="Save" onclick="saveRecipe();">
+                        <input type="button"  class="btn btn-default"  name="submit" value="Clear" onclick="clearFields();">
+
+                    </form>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3>Create Ingredients</h3>
+
+                    <form name="submit_ingredient" id="submitIngredient" action="#">
+                        <div class="form-group">
+                            <label>Name</label>
+                            <input  type="text" class="form-control" name="name" placeholder="type here..">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Amount</label>
+                            <input  type="text" class="form-control" name="amount" placeholder="type here..">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Measurement</label>
+                            <input  type="text" class="form-control" name="measurement" placeholder="type here..">
+                        </div>
+
+                        <input type="button"  class="btn btn-primary"  name="submit" value="Save" onclick="saveIngredient();">
+                    </form>
+                    <br>
+                    <div id="ingredients"></div>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-md-12">
+                    <h3>Create Directions</h3>
+
+                    <form name="submit_direction" id="submitDirection" action="#">
+                        <div class="form-group">
+                            <label>instructions</label>
+                            <textarea class="form-control" name="instructions" rows="4" cols="50"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Optional</label>
+                            <br>
+                            <input type="radio" name="optional" id="red" value="true" checked>Yes<br>
+                            <input type="radio" name="optional" id="blue" value="false">No
+                        </div>
+
+                        <input type="button"  class="btn btn-primary"  name="submit" value="Save" onclick="saveDirections();">
+                    </form>
+                    <br>
+                    <div id="directions"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<span id="linkButton">clickkk</span>
+<script type="text/javascript">
+    $(document).ready(function() {
+        toastr.options.timeOut = 1500;
+        $('#linkButton').click(function() {
+            toastr.success('Successfully saved recipe!');
+        });
+    });
+</script>
+
+<script src="add_recipe.js" type="text/javascript"></script>
+
+</body>
+</html>

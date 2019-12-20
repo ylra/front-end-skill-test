@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JONAS GEMSON ACUNA</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <script>
+        $(function(){
+            $("#view_Recipe").load("./recipes/view_detail_recipe/view_detail_recipe.html");
+            $("#list_Recipe").load("./recipes/view_list_recipe/view_list_recipe.html");
+        });
+    </script>
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <h1>View</h1>
+            <div class="viewContainer">
+                <div id="recipe_detail">
+                    <div id="view_Recipe"></div>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div>
+                <h1>List</h1>
+                <div class="float-right">
+                    <a class="btn btn-success" href="./recipes/add_recipe/add_recipe.html">CREATE</a>
+                </div>
+            </div>
+
+            <div class="listContainer">
+                <!--<div id="recipe_list"></div>-->
+                <div id="list_Recipe"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--<object data="./recipes/add_recipe/add_recipe.html"></object>-->
+</body>
+</html>
