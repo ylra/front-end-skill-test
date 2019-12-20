@@ -5,6 +5,6 @@
 
 function selectedRecipe(details) {
     console.log(details);
-    document.getElementById("recipe_detail_title").innerHTML = details.title || 'TESSSSSSSSSS';
+    document.getElementById("recipe_detail_title").innerHTML = details.title;
     document.getElementById("recipe_detail_img").src = details.images.medium;
 }
