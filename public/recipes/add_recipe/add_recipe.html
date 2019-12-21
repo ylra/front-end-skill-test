@@ -4,10 +4,12 @@
     <meta charset="UTF-8">
     <title>JONAS GEMSON ACUNA</title>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css" rel="stylesheet"/>
@@ -92,8 +94,8 @@
                         <div class="form-group">
                             <label>Optional</label>
                             <br>
-                            <input type="radio" name="optional" id="red" value="true" checked>Yes<br>
-                            <input type="radio" name="optional" id="blue" value="false">No
+                            <input type="radio" name="optional" value="true" checked>Yes<br>
+                            <input type="radio" name="optional" value="false">No
                         </div>
 
                         <input type="button"  class="btn btn-primary"  name="submit" value="Save" onclick="saveDirections();">
@@ -106,11 +108,58 @@
     </div>
 </div>
 
-<span id="linkButton">clickkk</span>
+<div class="modal fade" id="add-specials" role="dialog">
+    <div class="modal-dialog">
+
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">ADD SPECIALS</h4>
+            </div>
+            <div class="modal-body">
+                <form name="submit_special" id="submitSpecials" action="#">
+                    <div class="form-group">
+                        <label>Title</label>
+                        <input  type="text" class="form-control" name="title" placeholder="type here..">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Type</label>
+                        <br>
+                        <input type="radio" name="type" value="event" checked>Event<br>
+                        <input type="radio" name="type" value="local">Local <br>
+                        <input type="radio" name="type" value="promocode">Promocode <br>
+                        <input type="radio" name="type" value="sale">Sale
+                    </div>
+
+                    <div class="form-group">
+                        <label>Geo</label>
+                        <br>
+                        <input  type="text" class="form-control" name="geo" placeholder="type here..">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Text</label>
+                        <textarea class="form-control" name="text" rows="4" cols="50"></textarea>
+                    </div>
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="saveSpecials()">Save</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<span id="saveRecipes"></span>
+
 <script type="text/javascript">
     $(document).ready(function() {
         toastr.options.timeOut = 1500;
-        $('#linkButton').click(function() {
+        $('#saveRecipes').click(function() {
             toastr.success('Successfully saved recipe!');
         });
     });

@@ -16,6 +16,7 @@
 
 .float-right{
     float:right !important;
+    text-align:right !important;
 }
 
 h1{
