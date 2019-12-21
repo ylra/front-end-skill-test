@@ -9,10 +9,10 @@ let ingredient_form = document.submit_ingredient;
 let direction_form = document.submit_direction;
 let special_form = document.submit_special;
 
-//uuid field generator for ingredients list
+//uuid generator for ingredients list
 const numGenerator = (min, max) => Math.floor((Math.random() * max) + min);
 
-//post the recipe and special details
+//post recipe and special details
 const saveRecipe = () => {
     let recipe_info = {
         title: recipe_form.title.value,
@@ -136,7 +136,7 @@ const saveDirections = () => {
 //specials temporary save
 const saveSpecials = () => {
     specials.push({
-        ingredientId: ingredientId,
+        ingredientId: String(ingredientId),
         type: special_form.type.value,
         title: special_form.title.value,
         geo: special_form.geo.value,
@@ -153,6 +153,7 @@ const clearFields = () => {
     document.getElementById("submitDirection").reset();
     ingredients.length = 0;
     directions.length = 0;
+    specials.length = 0;
 
     renderList({
         name: 'ingredients',

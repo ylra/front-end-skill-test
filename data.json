@@ -482,30 +482,6 @@
       ]
     },
     {
-      "title": "waaaaa",
-      "description": "",
-      "servings": "",
-      "prepTime": "",
-      "cookTime": "",
-      "postDate": "2019-12-21T14:02:14.254Z",
-      "editDate": "2019-12-21T14:02:14.254Z",
-      "ingredients": [],
-      "directions": [],
-      "uuid": "1nAAgLb"
-    },
-    {
-      "title": "test",
-      "description": "",
-      "servings": "",
-      "prepTime": "",
-      "cookTime": "",
-      "postDate": "2019-12-21T14:02:21.394Z",
-      "editDate": "2019-12-21T14:02:21.394Z",
-      "ingredients": [],
-      "directions": [],
-      "uuid": "lr-DUjO"
-    },
-    {
       "title": "waaaa",
       "description": "",
       "servings": "",
@@ -563,7 +539,7 @@
       "text": "<p>Flash this recipe at a Roundy's near you and get 10% off Eriksens Hand Rolled Butter, salted or unsalted.</p>"
     },
     {
-      "ingredientId": 59191,
+      "ingredientId": "59191",
       "type": "event",
       "title": "222",
       "geo": "",
@@ -571,7 +547,7 @@
       "uuid": "fhns0kw"
     },
     {
-      "ingredientId": 19841,
+      "ingredientId": "19841",
       "type": "event",
       "title": "444",
       "geo": "",

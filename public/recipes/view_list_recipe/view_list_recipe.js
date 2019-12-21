@@ -24,8 +24,8 @@ const renderRecipeList = list => {
         html += '<div class="wrapper">';
         html += '<div class="recipe-list-title">' + list[i].title + '</div>';
         html += '<div class="recipe-list-desc">' + list[i].description + '</div>';
-        html += "<button class='btn btn-info' onClick='viewRecipe(" + JSON.stringify(list[i]) + ")'>View</button>" +
-            "<button class='btn btn-primary' onClick='selectToUpdateRecipe(" + JSON.stringify(list[i]) + ")'>Update</button>";
+        html += "<button class='btn btn-info' onClick='viewRecipe(" + JSON.stringify(list[i]) + ")'>View</button>";
+            // "<button class='btn btn-primary' onClick='selectToUpdateRecipe(" + JSON.stringify(list[i]) + ")'>Update</button>";
         html += '<hr/>';
         html += '</div>';
         html += '</div>';
@@ -38,7 +38,7 @@ const renderRecipeList = list => {
 const selectToUpdateRecipe = detail => localStorage.setItem('selected_recipe', detail.uuid);
 
 //Validate if the Recipe list is in local storage
-(activate  = () => {
+(activateList  = () => {
     let recipe_list = JSON.parse(localStorage.getItem('recipe_list'));
     let special_list = JSON.parse(localStorage.getItem('special_list'));
     return [
