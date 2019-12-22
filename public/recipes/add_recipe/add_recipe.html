@@ -8,8 +8,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css" rel="stylesheet"/>
@@ -18,39 +16,39 @@
 </head>
 <body>
 
+<br>
 <div class="container">
     <div class="row">
         <div class="col-md-6">
-
             <div class="input-design">
                 <h3>Create Recipe</h3>
-                    <hr/>
-                    <form name="submit_recipe" id="submitForm" action="#">
-                        <div class="form-group">
-                            <label>Title</label>
-                            <input  type="text" class="form-control" name="title" placeholder="type here..">
-                        </div>
-                        <div class="form-group">
-                            <label>Servings</label>
-                            <input type="text" class="form-control" name="servings" placeholder="type here..">
-                        </div>
-                        <div class="form-group">
-                            <label>Prep Time</label>
-                            <input type="text" class="form-control" name="prepTime" placeholder="type here..">
-                        </div>
-                        <div class="form-group">
-                            <label>Cook Time</label>
-                            <input type="text" class="form-control" name="cookTime" placeholder="type here..">
-                        </div>
-                        <div class="form-group">
-                            <label>Description</label>
-                            <textarea class="form-control" name="description" rows="4" cols="50"></textarea>
-                        </div>
+                <hr/>
+                <form name="submit_recipe" id="submitForm" action="#">
+                    <div class="form-group">
+                        <label>Title</label>
+                        <input type="text" class="form-control" name="title" placeholder="type here..">
+                    </div>
+                    <div class="form-group">
+                        <label>Servings</label>
+                        <input type="text" class="form-control" name="servings" placeholder="type here..">
+                    </div>
+                    <div class="form-group">
+                        <label>Prep Time</label>
+                        <input type="text" class="form-control" name="prepTime" placeholder="type here..">
+                    </div>
+                    <div class="form-group">
+                        <label>Cook Time</label>
+                        <input type="text" class="form-control" name="cookTime" placeholder="type here..">
+                    </div>
+                    <div class="form-group">
+                        <label>Description</label>
+                        <textarea class="form-control" name="description" rows="4" cols="50"></textarea>
+                    </div>
 
-                        <input type="button"  class="btn btn-primary"  name="submit" value="Save" onclick="saveRecipe();">
-                        <input type="button"  class="btn btn-default"  name="submit" value="Clear" onclick="clearFields();">
+                    <input type="button" class="btn btn-primary" name="submit" value="Save" onclick="saveRecipe();">
+                    <input type="button" class="btn btn-default" name="submit" value="Clear" onclick="clearFields();">
 
-                    </form>
+                </form>
             </div>
         </div>
         <div class="col-md-6">
@@ -61,20 +59,21 @@
                     <form name="submit_ingredient" id="submitIngredient" action="#">
                         <div class="form-group">
                             <label>Name</label>
-                            <input  type="text" class="form-control" name="name" placeholder="type here..">
+                            <input type="text" class="form-control" name="name" placeholder="type here..">
                         </div>
 
                         <div class="form-group">
                             <label>Amount</label>
-                            <input  type="text" class="form-control" name="amount" placeholder="type here..">
+                            <input type="text" class="form-control" name="amount" placeholder="type here..">
                         </div>
 
                         <div class="form-group">
                             <label>Measurement</label>
-                            <input  type="text" class="form-control" name="measurement" placeholder="type here..">
+                            <input type="text" class="form-control" name="measurement" placeholder="type here..">
                         </div>
 
-                        <input type="button"  class="btn btn-primary"  name="submit" value="Save" onclick="saveIngredient();">
+                        <input type="button" class="btn btn-primary" name="submit" value="Save"
+                               onclick="saveIngredient();">
                     </form>
                     <br>
                     <div id="ingredients"></div>
@@ -98,7 +97,8 @@
                             <input type="radio" name="optional" value="false">No
                         </div>
 
-                        <input type="button"  class="btn btn-primary"  name="submit" value="Save" onclick="saveDirections();">
+                        <input type="button" class="btn btn-primary" name="submit" value="Save"
+                               onclick="saveDirections();">
                     </form>
                     <br>
                     <div id="directions"></div>
@@ -120,7 +120,7 @@
                 <form name="submit_special" id="submitSpecials" action="#">
                     <div class="form-group">
                         <label>Title</label>
-                        <input  type="text" class="form-control" name="title" placeholder="type here..">
+                        <input type="text" class="form-control" name="title" placeholder="type here..">
                     </div>
 
                     <div class="form-group">
@@ -135,7 +135,7 @@
                     <div class="form-group">
                         <label>Geo</label>
                         <br>
-                        <input  type="text" class="form-control" name="geo" placeholder="type here..">
+                        <input type="text" class="form-control" name="geo" placeholder="type here..">
                     </div>
 
                     <div class="form-group">
@@ -146,7 +146,8 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="saveSpecials()">Save</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="saveSpecials()">Save
+                </button>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
         </div>
@@ -157,9 +158,9 @@
 <span id="saveRecipes"></span>
 
 <script type="text/javascript">
-    $(document).ready(function() {
+    $(document).ready(function () {
         toastr.options.timeOut = 1500;
-        $('#saveRecipes').click(function() {
+        $('#saveRecipes').click(function () {
             toastr.success('Successfully saved recipe!');
         });
     });

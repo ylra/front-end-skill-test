@@ -1,48 +1,43 @@
 let recipe_api = 'http://localhost:3001/recipes';
 let special_api = 'http://localhost:3001/specials';
 
-//Store recipe list to local storage
-const fetchRecipeData = () => {
-    return fetch(recipe_api)
+//get list and store to local storage
+const fetchData = (req) => {
+    return fetch(req.api)
         .then(response => response.json())
-        .then(json => localStorage.setItem('recipe_list', JSON.stringify(json)))
+        .then(json => localStorage.setItem(req.storage, JSON.stringify(json)))
 };
 
-//Store special list to local storage
-const fetchSpecialData = () => {
-    return fetch(special_api)
-        .then(response => response.json())
-        .then(json => localStorage.setItem('special_list', JSON.stringify(json)))
-};
-
-//Render the recipe list to html
+//render the recipe list to html
 const renderRecipeList = list => {
     let html = '';
-    html += '<div class="row">';
     for (let i = 0; i < list.length; i++) {
-        html += '<div class="col-md-12">';
-        html += '<div class="wrapper">';
+        html += '<div class="row list-item">';
+        html += '<div class="col-md-7">';
         html += '<div class="recipe-list-title">' + list[i].title + '</div>';
         html += '<div class="recipe-list-desc">' + list[i].description + '</div>';
+        html += '</div>';
+        html += '<div class="col-md-2">';
         html += "<button class='btn btn-info' onClick='viewRecipe(" + JSON.stringify(list[i]) + ")'>View</button>";
-            // "<button class='btn btn-primary' onClick='selectToUpdateRecipe(" + JSON.stringify(list[i]) + ")'>Update</button>";
-        html += '<hr/>';
+        html += '</div>';
+        html += '<div class="col-md-3">';
+        html += "<a class='btn btn-primary' href='./recipes/update_recipe/update_recipe.html' " +
+                "onClick='selectToUpdateRecipe(" + JSON.stringify(list[i]) + ")'>Update</a>";
         html += '</div>';
         html += '</div>';
     }
-    html += '</div';
     document.getElementById("recipe_list").innerHTML = html;
 };
 
-//Store recipe uuid to local storage, for update view
+//save uuid to local storage, for update view
 const selectToUpdateRecipe = detail => localStorage.setItem('selected_recipe', detail.uuid);
 
-//Validate if the recipe/special is in local storage
+//validate if the recipe/special is in local storage
 (activateList  = () => {
     let recipe_list = JSON.parse(localStorage.getItem('recipe_list'));
     let special_list = JSON.parse(localStorage.getItem('special_list'));
     return [
-        !recipe_list ? fetchRecipeData() : renderRecipeList(recipe_list),
-        !special_list ? fetchSpecialData() : special_list,
+        !recipe_list ? fetchData({api:recipe_api,storage:'recipe_list'}) : renderRecipeList(recipe_list),
+        !special_list ? fetchData({api:special_api,storage:'special_list'}) : special_list,
     ];
 })();
