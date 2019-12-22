@@ -482,29 +482,40 @@
       ]
     },
     {
-      "title": "waaaa",
-      "description": "",
-      "servings": "",
-      "prepTime": "",
-      "cookTime": "",
-      "postDate": "2019-12-21T14:02:34.594Z",
-      "editDate": "2019-12-21T14:02:34.594Z",
+      "title": "Sisig",
+      "description": "sisig recipe",
+      "images": {
+        "full": "/img/pancake_mountain.jpg",
+        "medium": "/img/pancake_mountain--m.jpg",
+        "small": "/img/pancake_mountain--s.jpg"
+      },
+      "servings": "150",
+      "prepTime": "20 mins",
+      "cookTime": "1hr",
+      "postDate": "2019-12-22T07:43:28.689Z",
+      "editDate": "2019-12-22T07:43:28.689Z",
       "ingredients": [
         {
-          "uuid": 59191,
-          "name": "111",
-          "measurement": "",
-          "amount": ""
+          "uuid": "40756",
+          "name": "pork",
+          "measurement": "2",
+          "amount": "1"
         },
         {
-          "uuid": 19841,
-          "name": "333",
+          "uuid": "57017",
+          "name": "mayonaise",
+          "measurement": "80",
+          "amount": "120"
+        },
+        {
+          "uuid": "56430",
+          "name": "egg",
           "measurement": "",
-          "amount": ""
+          "amount": "4"
         }
       ],
       "directions": [],
-      "uuid": "2IiNZfO"
+      "uuid": "M1Sk_UG"
     }
   ],
   "specials": [
@@ -539,20 +550,20 @@
       "text": "<p>Flash this recipe at a Roundy's near you and get 10% off Eriksens Hand Rolled Butter, salted or unsalted.</p>"
     },
     {
-      "ingredientId": "59191",
+      "ingredientId": "40756",
       "type": "event",
-      "title": "222",
-      "geo": "",
-      "text": "",
-      "uuid": "fhns0kw"
+      "title": "Special Event",
+      "geo": "454545",
+      "text": "test",
+      "uuid": "4e_4oDa"
     },
     {
-      "ingredientId": "19841",
-      "type": "event",
-      "title": "444",
-      "geo": "",
-      "text": "",
-      "uuid": "uc-L2Gr"
+      "ingredientId": "56430",
+      "type": "sale",
+      "title": "Sale",
+      "geo": "8787",
+      "text": "egg is on sale",
+      "uuid": "SVe4V0G"
     }
   ]
 }

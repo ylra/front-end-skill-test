@@ -9,13 +9,18 @@ let ingredient_form = document.submit_ingredient;
 let direction_form = document.submit_direction;
 let special_form = document.submit_special;
 
-//uuid generator for ingredients list
+//uuid generator
 const numGenerator = (min, max) => Math.floor((Math.random() * max) + min);
 
 //post recipe and special details
 const saveRecipe = () => {
     let recipe_info = {
         title: recipe_form.title.value,
+        images: {
+            full: '/img/pancake_mountain.jpg',
+            medium: '/img/pancake_mountain--m.jpg',
+            small: '/img/pancake_mountain--s.jpg'
+        },
         description: recipe_form.description.value,
         servings: recipe_form.servings.value,
         prepTime: recipe_form.prepTime.value,
@@ -105,7 +110,7 @@ const fetchSpecialData = () => {
 //ingredients temporary save
 const saveIngredient = () => {
     ingredients.push({
-        uuid: numGenerator(1000, 100000),
+        uuid: String(numGenerator(1000, 100000)),
         name: ingredient_form.name.value,
         measurement: ingredient_form.measurement.value,
         amount: ingredient_form.amount.value,

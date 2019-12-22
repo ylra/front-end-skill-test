@@ -15,7 +15,7 @@ const fetchSpecialData = () => {
         .then(json => localStorage.setItem('special_list', JSON.stringify(json)))
 };
 
-//Render the recipe list to html table
+//Render the recipe list to html
 const renderRecipeList = list => {
     let html = '';
     html += '<div class="row">';
@@ -34,10 +34,10 @@ const renderRecipeList = list => {
     document.getElementById("recipe_list").innerHTML = html;
 };
 
-//Store the recipe uuid to local storage, will be used for update view
+//Store recipe uuid to local storage, for update view
 const selectToUpdateRecipe = detail => localStorage.setItem('selected_recipe', detail.uuid);
 
-//Validate if the Recipe list is in local storage
+//Validate if the recipe/special is in local storage
 (activateList  = () => {
     let recipe_list = JSON.parse(localStorage.getItem('recipe_list'));
     let special_list = JSON.parse(localStorage.getItem('special_list'));
